@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "Act",
+    "slug": "Act",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle" : "light",
+    "splash": {
+      "image": "./assets/screen.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#f5f1e9"
+    },
+    
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.uf.Act"
+    },
+    "android": {
+      "package": "com.uf.Act",
+      "versionCode": 1,
+      "userInterfaceStyle": "light"
+      
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "description": ""
+  }
+}

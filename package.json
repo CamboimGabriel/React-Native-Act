@@ -1,0 +1,67 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.13.3",
+    "@react-native-community/async-storage": "^1.12.1",
+    "@react-native-community/checkbox": "^0.5.7",
+    "@react-native-community/masked-view": "0.1.10",
+    "@react-native-community/segmented-control": "^2.2.2",
+    "@react-native-picker/picker": "^1.9.10",
+    "@react-navigation/bottom-tabs": "^5.10.7",
+    "@react-navigation/native": "^5.9.0",
+    "@react-navigation/stack": "^5.13.0",
+    "@welldone-software/why-did-you-render": "^6.0.5",
+    "axios": "^0.21.1",
+    "expo": "^39.0.5",
+    "expo-status-bar": "~1.0.2",
+    "formik": "^2.2.6",
+    "linking": "0.1.0-beta.5",
+    "picker": "^0.1.4",
+    "react": "16.13.1",
+    "react-async-hook": "^3.6.2",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
+    "react-native-appearance": "~0.3.3",
+    "react-native-gesture-handler": "~1.7.0",
+    "react-native-masked-text": "^1.13.0",
+    "react-native-paper": "^4.7.1",
+    "react-native-reanimated": "~1.13.0",
+    "react-native-safe-area-context": "3.1.4",
+    "react-native-screens": "~2.10.1",
+    "react-native-select-multiple": "github:rafaelbpa/react-native-select-multiple",
+    "react-native-simple-radio-button": "^2.7.4",
+    "react-native-vector-icons": "^7.1.0",
+    "react-native-web": "~0.13.12",
+    "react-navigation": "^4.4.3",
+    "react-navigation-stack": "^2.10.1",
+    "react-navigation-tabs": "^2.10.1",
+    "rn-checkbox-list": "^0.4.0",
+    "yup": "^0.32.8"
+  },
+  "devDependencies": {
+    "@babel/core": "~7.9.0",
+    "babel-plugin-transform-remove-console": "^6.9.4"
+  },
+  "private": true,
+  "name": "act",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamboimGabriel/Act.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CamboimGabriel/Act/issues"
+  },
+  "homepage": "https://github.com/CamboimGabriel/Act#readme",
+  "description": "Front-end do app desenvolvido para a IVEPESP em React Native."
+}
