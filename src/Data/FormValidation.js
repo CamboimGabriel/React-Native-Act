@@ -119,23 +119,75 @@ const FormSchema = Yup.object().shape({
   PAFAS_9: Yup.string().required("Campo obrigatório"),
   PAFAS_11: Yup.string().required("Campo obrigatório"),
 
-  SDQ_1: Yup.string().required("Campo obrigatório"),
-  SDQ_2: Yup.string().required("Campo obrigatório"),
-  SDQ_3: Yup.string().required("Campo obrigatório"),
-  SDQ_4: Yup.string().required("Campo obrigatório"),
-  SDQ_5: Yup.string().required("Campo obrigatório"),
-  SDQ_6: Yup.string().required("Campo obrigatório"),
-  SDQ_7: Yup.string().required("Campo obrigatório"),
-  SDQ_8: Yup.string().required("Campo obrigatório"),
-  SDQ_9: Yup.string().required("Campo obrigatório"),
-  SDQ_10: Yup.string().required("Campo obrigatório"),
-  SDQ_11: Yup.string().required("Campo obrigatório"),
-  SDQ_12: Yup.string().required("Campo obrigatório"),
-  SDQ_13: Yup.string().required("Campo obrigatório"),
-  SDQ_14: Yup.string().required("Campo obrigatório"),
-  SDQ_15: Yup.string().required("Campo obrigatório"),
-  SDQ_16: Yup.string().required("Campo obrigatório"),
-  SDQ_17: Yup.string().required("Campo obrigatório"),
+  SDQ_1: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+
+  SDQ_2: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_3: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_4: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_5: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_6: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_7: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_8: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_9: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_10: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_11: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_12: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_13: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_14: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_15: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_16: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_17: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
   "SDQ_18(2-3)": Yup.string().when("familia.crianca.idade", {
     is: (value) => value <= 3 && value >= 2,
     then: Yup.string().required("Campo obrigatorio"),
@@ -145,9 +197,14 @@ const FormSchema = Yup.object().shape({
     is: (value) => value <= 8 && value >= 4,
     then: Yup.string().required("Campo obrigatorio"),
   }),
-  SDQ_19: Yup.string().required("Campo obrigatório"),
-  SDQ_20: Yup.string().required("Campo obrigatório"),
-
+  SDQ_19: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_20: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
   "SDQ_21(2-3)": Yup.string().when("familia.crianca.idade", {
     is: (value) => value <= 3 && value >= 2,
     then: Yup.string().required("Campo obrigatorio"),
@@ -164,9 +221,18 @@ const FormSchema = Yup.object().shape({
     is: (value) => value <= 8 && value >= 4,
     then: Yup.string().required("Campo obrigatorio"),
   }),
-  SDQ_23: Yup.string().required("Campo obrigatório"),
-  SDQ_24: Yup.string().required("Campo obrigatório"),
-  SDQ_25: Yup.string().required("Campo obrigatório"),
+  SDQ_23: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_24: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
+  SDQ_25: Yup.string().when("familia.crianca.idade", {
+    is: (value) => value >= 2,
+    then: Yup.string().required("Campo obrigatorio"),
+  }),
 
   EPVA_3: Yup.string().when(
     ["familia.cuidador.idade", "familia.formulariosPreenchidos"],
@@ -240,15 +306,6 @@ const FormSchema = Yup.object().shape({
   ),
 
   EPVA_16: Yup.string().when(
-    ["familia.cuidador.idade", "familia.formulariosPreenchidos"],
-    {
-      is: (value, value2) => value < 18 && value2 === 0,
-
-      then: Yup.string().required("Campo obrigatorio"),
-    }
-  ),
-
-  EPVA_17: Yup.string().when(
     ["familia.cuidador.idade", "familia.formulariosPreenchidos"],
     {
       is: (value, value2) => value < 18 && value2 === 0,

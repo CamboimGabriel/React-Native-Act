@@ -8,6 +8,7 @@ import MultipleCheckBox from "../components/MultipleCheckBoxComponent";
 import { TextInputMask } from "react-native-masked-text";
 const RegisterForm = ({ submit }) => {
   const [state, setState] = React.useState(false);
+  const [meses, setMeses] = React.useState(false);
 
   return (
     <View style={{ paddingBottom: 40, paddingTop: 10 }}>
@@ -17,6 +18,7 @@ const RegisterForm = ({ submit }) => {
           criancaNome: "",
           criancaNascimento: "",
           criancaIdade: "",
+          criancaMeses: "",
           cuidadorNome: "",
           criancaSexo: "",
           cuidadorNascimento: "",
@@ -72,7 +74,6 @@ const RegisterForm = ({ submit }) => {
                 Escolha um dos seus filhos que tenha de 2 a 6 anos e que você
                 tem maior preocupação para responder as perguntas
               </Text>
-
               <Text
                 style={{
                   fontWeight: "bold",
@@ -83,7 +84,6 @@ const RegisterForm = ({ submit }) => {
               >
                 Dados da criança:
               </Text>
-
               <CustomInput
                 onBlur={handleBlur("criancaNome")}
                 error={errors.criancaNome}
@@ -98,7 +98,6 @@ const RegisterForm = ({ submit }) => {
                   borderBottomColor: "#575757",
                 }}
               />
-
               <View
                 style={{
                   height: 40,
@@ -130,22 +129,61 @@ const RegisterForm = ({ submit }) => {
                 )}
               </View>
 
-              <CustomInput
-                onBlur={handleBlur("criancaIdade")}
-                error={errors.criancaIdade}
+              <Select
                 touched={touched.criancaIdade}
-                value={values.criancaIdade}
-                placeholder="Idade:"
-                onChangeText={handleChange("criancaIdade")}
-                keyboardType="numeric"
-                style={{
-                  height: 40,
-                  margin: 4,
-                  borderBottomWidth: 1,
-                  borderBottomColor: "#575757",
-                }}
-              />
+                style={styles.box1}
+                styleTitle={styles.title}
+                errors={errors.criancaIdade}
+                data={[
+                  { key: "Menos de 1 ano", id: 0, checked: false },
+                  { key: "1 ano", id: 1, checked: false },
+                  { key: "2 anos", id: 2, checked: false },
+                  { key: "3 anos", id: 3, checked: false },
+                  { key: "4 anos", id: 4, checked: false },
+                  { key: "5 anos", id: 5, checked: false },
+                  { key: "6 anos", id: 6, checked: false },
+                ]}
+                onSelectionChange={(selected) => {
+                  values.criancaIdade =
+                    selected === "1 ano"
+                      ? 1
+                      : selected === "2 anos"
+                      ? 2
+                      : selected === "3 anos"
+                      ? 3
+                      : selected === "4 anos"
+                      ? 4
+                      : selected === "5 anos"
+                      ? 5
+                      : selected === "6 anos"
+                      ? 6
+                      : "meses";
 
+                  if (values.criancaIdade === "meses") {
+                    setMeses(true);
+                  } else {
+                    setMeses(false);
+                  }
+                }}
+                title="Idade: "
+              />
+              {meses === true && (
+                <CustomInput
+                  onBlur={handleBlur("criancaMeses")}
+                  error={errors.criancaMeses}
+                  touched={touched.criancaMeses}
+                  value={values.criancaMeses}
+                  placeholder="Meses:"
+                  onChangeText={handleChange("criancaMeses")}
+                  keyboardType="numeric"
+                  style={{
+                    height: 40,
+                    margin: 4,
+                    borderBottomWidth: 1,
+                    borderBottomColor: "#575757",
+                  }}
+                />
+              )}
               <Select
                 touched={touched.criancaSexo}
                 style={styles.box1}
@@ -160,7 +198,6 @@ const RegisterForm = ({ submit }) => {
                 }}
                 title="Sexo:"
               />
-
               <Select
                 touched={touched.criancaPele}
                 style={styles.box1}
@@ -218,7 +255,7 @@ const RegisterForm = ({ submit }) => {
                   options={{
                     format: "DD/MM/YYYY",
                   }}
-                  value={values.cuidadorNascimento}
+                  Idade={values.cuidadorNascimento}
                   onChangeText={handleChange("cuidadorNascimento")}
                   placeholder="Nascimento:"
                 />
@@ -546,6 +583,10 @@ const RegisterForm = ({ submit }) => {
             <TouchableOpacity
               style={styles.button}
               onPress={() => {
+                if (values.criancaMeses !== "") {
+                  values.criancaIdade = values.criancaMeses / 12;
+                }
+
                 handleSubmit();
               }}
             >

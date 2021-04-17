@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import {
   View,
   StyleSheet,
@@ -6,6 +6,7 @@ import {
   Platform,
   StatusBar,
   ScrollView,
+  Button,
 } from "react-native";
 import { Context as FormContext } from "../context/FormContext";
 import Form from "../Data/FormData";
@@ -14,10 +15,16 @@ const FormScreen = ({ navigation, route }) => {
   const family = route.params?.family ?? "noFamily";
   const [isLoading, setIsLoading] = React.useState(false);
   const { RegisterForm } = useContext(FormContext);
+  const scrollView = useRef(null);
+
+  const goTo = () => {
+    scrollView.current?.scrollTo({ x: 0, y: 0, animated: true });
+  };
 
   return !isLoading ? (
-    <ScrollView>
+    <ScrollView ref={scrollView}>
       <Form
+        goTo={() => goTo()}
         submit={(data) => {
           setIsLoading(true);
           RegisterForm(
