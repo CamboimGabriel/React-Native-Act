@@ -67,18 +67,24 @@ const FamiliesScreen = ({ navigation }) => {
             ListFooterComponent={() => {
               return state.semGrupo.length - contador >= 6 &&
                 selectedValue === "Sem Grupo" ? (
-                <TouchableOpacity
-                  style={styles.button}
-                  onPress={() => {
-                    setIsLoading(true);
-                    CreateGroup(
-                      () => navigation.navigate("Groups"),
-                      () => setIsLoading(false)
-                    );
-                  }}
-                >
-                  <Text style={styles.appButtonText}>criar grupo</Text>
-                </TouchableOpacity>
+                <>
+                  <Text style={{ fontSize: 16, marginTop: 15, color: "green" }}>
+                    Foram cadastradas seis famílias e a partir de agora você
+                    pode criar um grupo com essas famílias.
+                  </Text>
+                  <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => {
+                      setIsLoading(true);
+                      CreateGroup(
+                        () => navigation.navigate("Groups"),
+                        () => setIsLoading(false)
+                      );
+                    }}
+                  >
+                    <Text style={styles.appButtonText}>criar grupo</Text>
+                  </TouchableOpacity>
+                </>
               ) : (
                 <></>
               );

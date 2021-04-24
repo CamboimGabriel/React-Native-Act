@@ -165,6 +165,7 @@ const Form = ({ submit, family, goTo }) => {
           VI_2: [],
           VI_3: [],
           VI_4: [],
+          ACT: "",
         }}
         onSubmit={(values, actions) => {
           actions.resetForm();
@@ -182,7 +183,6 @@ const Form = ({ submit, family, goTo }) => {
           validateField,
         }) => (
           <ScrollView ref={scrollView}>
-            {console.log(values)}
             <Text
               style={{
                 alignSelf: "center",
@@ -198,6 +198,7 @@ const Form = ({ submit, family, goTo }) => {
             {page === 1 && (
               <>
                 <Select
+                  value={values.participouOutro}
                   touched={touched.participouOutro}
                   style={styles.box}
                   errors={errors.participouOutro}
@@ -217,13 +218,14 @@ const Form = ({ submit, family, goTo }) => {
                 />
                 {state === true && (
                   <MultipleCheckBox
+                    value={values.casoParticipe}
                     errors={errors.casoParticipe}
                     touched={touched.casoParticipe}
                     title="Se sim qual ?"
                     data={[
                       {
                         id: 0,
-                        key: "Crescendo Aprendendo",
+                        key: "Crescer Aprendendo",
                         checked: "unchecked",
                       },
                       { id: 1, key: "Criança Feliz", checked: "unchecked" },
@@ -245,10 +247,16 @@ const Form = ({ submit, family, goTo }) => {
               <View>
                 <View style={styles.box}>
                   <Text style={styles.text}>
+                    Neste questionário o chefe da família considerado é a pessoa
+                    de maior renda
+                  </Text>
+
+                  <Text style={styles.text}>
                     Quantidade de itens de conforto:
                   </Text>
 
                   <Select
+                    value={values.ABEP_1}
                     touched={touched.ABEP_1}
                     style={styles.box1}
                     errors={errors.ABEP_1}
@@ -257,8 +265,7 @@ const Form = ({ submit, family, goTo }) => {
                       { key: "1", id: 1, checked: false },
                       { key: "2", id: 2, checked: false },
                       { key: "3", id: 3, checked: false },
-                      { key: "4", id: 4, checked: false },
-                      { key: "4 ou +", id: 5, checked: false },
+                      { key: "4 ou +", id: 4, checked: false },
                     ]}
                     onSelectionChange={(selected) => {
                       values.ABEP_1 = selected;
@@ -267,6 +274,7 @@ const Form = ({ submit, family, goTo }) => {
                     title="Banheiros"
                   />
                   <Select
+                    value={values.ABEP_2}
                     touched={touched.ABEP_2}
                     style={styles.box1}
                     errors={errors.ABEP_2}
@@ -275,8 +283,7 @@ const Form = ({ submit, family, goTo }) => {
                       { key: "1", id: 1, checked: false },
                       { key: "2", id: 2, checked: false },
                       { key: "3", id: 3, checked: false },
-                      { key: "4", id: 4, checked: false },
-                      { key: "4 ou +", id: 5, checked: false },
+                      { key: "4 ou +", id: 4, checked: false },
                     ]}
                     onSelectionChange={(selected) => {
                       values.ABEP_2 = selected;
@@ -285,6 +292,7 @@ const Form = ({ submit, family, goTo }) => {
                     title="Empregados domésticos"
                   />
                   <Select
+                    value={values.ABEP_3}
                     touched={touched.ABEP_3}
                     style={styles.box1}
                     errors={errors.ABEP_3}
@@ -293,8 +301,7 @@ const Form = ({ submit, family, goTo }) => {
                       { key: "1", id: 1, checked: false },
                       { key: "2", id: 2, checked: false },
                       { key: "3", id: 3, checked: false },
-                      { key: "4", id: 4, checked: false },
-                      { key: "4 ou +", id: 5, checked: false },
+                      { key: "4 ou +", id: 4, checked: false },
                     ]}
                     onSelectionChange={(selected) => {
                       values.ABEP_3 = selected;
@@ -303,6 +310,7 @@ const Form = ({ submit, family, goTo }) => {
                     title="Automóveis"
                   />
                   <Select
+                    value={values.ABEP_4}
                     touched={touched.ABEP_4}
                     style={styles.box1}
                     errors={errors.ABEP_4}
@@ -311,8 +319,7 @@ const Form = ({ submit, family, goTo }) => {
                       { key: "1", id: 1, checked: false },
                       { key: "2", id: 2, checked: false },
                       { key: "3", id: 3, checked: false },
-                      { key: "4", id: 4, checked: false },
-                      { key: "4 ou +", id: 5, checked: false },
+                      { key: "4 ou +", id: 4, checked: false },
                     ]}
                     onSelectionChange={(selected) => {
                       values.ABEP_4 = selected;
@@ -321,6 +328,7 @@ const Form = ({ submit, family, goTo }) => {
                     title="Microcomputador"
                   />
                   <Select
+                    value={values.ABEP_5}
                     touched={touched.ABEP_5}
                     style={styles.box1}
                     errors={errors.ABEP_5}
@@ -329,8 +337,7 @@ const Form = ({ submit, family, goTo }) => {
                       { key: "1", id: 1, checked: false },
                       { key: "2", id: 2, checked: false },
                       { key: "3", id: 3, checked: false },
-                      { key: "4", id: 4, checked: false },
-                      { key: "4 ou +", id: 5, checked: false },
+                      { key: "4 ou +", id: 4, checked: false },
                     ]}
                     onSelectionChange={(selected) => {
                       values.ABEP_5 = selected;
@@ -339,6 +346,7 @@ const Form = ({ submit, family, goTo }) => {
                     title="Lava louça"
                   />
                   <Select
+                    value={values.ABEP_6}
                     touched={touched.ABEP_6}
                     style={styles.box1}
                     errors={errors.ABEP_6}
@@ -347,8 +355,7 @@ const Form = ({ submit, family, goTo }) => {
                       { key: "1", id: 1, checked: false },
                       { key: "2", id: 2, checked: false },
                       { key: "3", id: 3, checked: false },
-                      { key: "4", id: 4, checked: false },
-                      { key: "4 ou +", id: 5, checked: false },
+                      { key: "4 ou +", id: 4, checked: false },
                     ]}
                     onSelectionChange={(selected) => {
                       values.ABEP_6 = selected;
@@ -357,6 +364,7 @@ const Form = ({ submit, family, goTo }) => {
                     title="Geladeira"
                   />
                   <Select
+                    value={values.ABEP_7}
                     touched={touched.ABEP_7}
                     style={styles.box1}
                     errors={errors.ABEP_7}
@@ -365,8 +373,7 @@ const Form = ({ submit, family, goTo }) => {
                       { key: "1", id: 1, checked: false },
                       { key: "2", id: 2, checked: false },
                       { key: "3", id: 3, checked: false },
-                      { key: "4", id: 4, checked: false },
-                      { key: "4 ou +", id: 5, checked: false },
+                      { key: "4 ou +", id: 4, checked: false },
                     ]}
                     onSelectionChange={(selected) => {
                       values.ABEP_7 = selected;
@@ -375,6 +382,7 @@ const Form = ({ submit, family, goTo }) => {
                     title="Freezer"
                   />
                   <Select
+                    value={values.ABEP_8}
                     touched={touched.ABEP_8}
                     style={styles.box1}
                     errors={errors.ABEP_8}
@@ -383,8 +391,7 @@ const Form = ({ submit, family, goTo }) => {
                       { key: "1", id: 1, checked: false },
                       { key: "2", id: 2, checked: false },
                       { key: "3", id: 3, checked: false },
-                      { key: "4", id: 4, checked: false },
-                      { key: "4 ou +", id: 5, checked: false },
+                      { key: "4 ou +", id: 4, checked: false },
                     ]}
                     onSelectionChange={(selected) => {
                       values.ABEP_8 = selected;
@@ -393,6 +400,7 @@ const Form = ({ submit, family, goTo }) => {
                     title="Lava roupa"
                   />
                   <Select
+                    value={values.ABEP_9}
                     touched={touched.ABEP_9}
                     style={styles.box1}
                     errors={errors.ABEP_9}
@@ -401,8 +409,7 @@ const Form = ({ submit, family, goTo }) => {
                       { key: "1", id: 1, checked: false },
                       { key: "2", id: 2, checked: false },
                       { key: "3", id: 3, checked: false },
-                      { key: "4", id: 4, checked: false },
-                      { key: "4 ou +", id: 5, checked: false },
+                      { key: "4 ou +", id: 4, checked: false },
                     ]}
                     onSelectionChange={(selected) => {
                       values.ABEP_9 = selected;
@@ -411,6 +418,7 @@ const Form = ({ submit, family, goTo }) => {
                     title="DVD"
                   />
                   <Select
+                    value={values.ABEP_10}
                     touched={touched.ABEP_10}
                     style={styles.box1}
                     errors={errors.ABEP_10}
@@ -419,8 +427,7 @@ const Form = ({ submit, family, goTo }) => {
                       { key: "1", id: 1, checked: false },
                       { key: "2", id: 2, checked: false },
                       { key: "3", id: 3, checked: false },
-                      { key: "4", id: 4, checked: false },
-                      { key: "4 ou +", id: 5, checked: false },
+                      { key: "4 ou +", id: 4, checked: false },
                     ]}
                     onSelectionChange={(selected) => {
                       values.ABEP_10 = selected;
@@ -429,6 +436,7 @@ const Form = ({ submit, family, goTo }) => {
                     title="Microondas"
                   />
                   <Select
+                    value={values.ABEP_11}
                     touched={touched.ABEP_11}
                     style={styles.box1}
                     errors={errors.ABEP_11}
@@ -437,8 +445,7 @@ const Form = ({ submit, family, goTo }) => {
                       { key: "1", id: 1, checked: false },
                       { key: "2", id: 2, checked: false },
                       { key: "3", id: 3, checked: false },
-                      { key: "4", id: 4, checked: false },
-                      { key: "4 ou +", id: 5, checked: false },
+                      { key: "4 ou +", id: 4, checked: false },
                     ]}
                     onSelectionChange={(selected) => {
                       values.ABEP_11 = selected;
@@ -447,6 +454,7 @@ const Form = ({ submit, family, goTo }) => {
                     title="Motocicleta"
                   />
                   <Select
+                    value={values.ABEP_12}
                     touched={touched.ABEP_12}
                     style={styles.box1}
                     errors={errors.ABEP_12}
@@ -455,8 +463,7 @@ const Form = ({ submit, family, goTo }) => {
                       { key: "1", id: 1, checked: false },
                       { key: "2", id: 2, checked: false },
                       { key: "3", id: 3, checked: false },
-                      { key: "4", id: 4, checked: false },
-                      { key: "4 ou +", id: 5, checked: false },
+                      { key: "4 ou +", id: 4, checked: false },
                     ]}
                     onSelectionChange={(selected) => {
                       values.ABEP_12 = selected;
@@ -465,7 +472,9 @@ const Form = ({ submit, family, goTo }) => {
                     title="Secadora roupa"
                   />
                 </View>
+
                 <Select
+                  value={values.ABEP_13}
                   touched={touched.ABEP_13}
                   style={styles.box}
                   errors={errors.ABEP_13}
@@ -499,6 +508,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Qual é o grau de instrução do chefe da família ?"
                 />
                 <Select
+                  value={values.ABEP_14}
                   touched={touched.ABEP_14}
                   style={styles.box}
                   errors={errors.ABEP_14}
@@ -518,6 +528,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="A água neste domicílio é proveniente de?"
                 />
                 <Select
+                  value={values.ABEP_15}
                   touched={touched.ABEP_15}
                   style={styles.box}
                   errors={errors.ABEP_15}
@@ -549,6 +560,7 @@ const Form = ({ submit, family, goTo }) => {
                 </Text>
 
                 <Select
+                  value={values.MICS_1}
                   touched={touched.MICS_1}
                   style={styles.box1}
                   errors={errors.MICS_1}
@@ -560,9 +572,10 @@ const Form = ({ submit, family, goTo }) => {
                     values.MICS_1 = selected;
                     //validateField("MICS_1");
                   }}
-                  title={`...Leu ou olhou figuras em livros, revistas e jornais com a ${family.crianca.nome}?`}
+                  title={`...Leu ou olhou figuras em livros, revistas e jornais com o(a) ${family.crianca.nome}?`}
                 />
                 <Select
+                  value={values.MICS_2}
                   touched={touched.MICS_2}
                   style={styles.box1}
                   errors={errors.MICS_2}
@@ -574,9 +587,10 @@ const Form = ({ submit, family, goTo }) => {
                     values.MICS_2 = selected;
                     //validateField("MICS_2");
                   }}
-                  title={`...Contou estórias a ${family.crianca.nome}`}
+                  title={`...Contou estórias para o(a) ${family.crianca.nome}`}
                 />
                 <Select
+                  value={values.MICS_3}
                   touched={touched.MICS_3}
                   style={styles.box1}
                   errors={errors.MICS_3}
@@ -588,9 +602,10 @@ const Form = ({ submit, family, goTo }) => {
                     values.MICS_3 = selected;
                     //validateField("MICS_3");
                   }}
-                  title={`...Cantou músicas com a ${family.crianca.nome} ou para ${family.crianca.nome} incluindo cantigas de ninar`}
+                  title={`...Cantou músicas com o(a) ${family.crianca.nome} ou para ${family.crianca.nome} incluindo cantigas de ninar`}
                 />
                 <Select
+                  value={values.MICS_4}
                   touched={touched.MICS_4}
                   style={styles.box1}
                   errors={errors.MICS_4}
@@ -602,10 +617,11 @@ const Form = ({ submit, family, goTo }) => {
                     values.MICS_4 = selected;
                     //validateField("MICS_4");
                   }}
-                  title={`...Levou a ${family.crianca.nome} para fora de casa,no quintal,jardim ou cercado?`}
+                  title={`...Levou o(a) ${family.crianca.nome} para fora de casa,no quintal,jardim ou cercado?`}
                 />
 
                 <Select
+                  value={values.MICS_5}
                   touched={touched.MICS_5}
                   style={styles.box1}
                   errors={errors.MICS_5}
@@ -617,9 +633,10 @@ const Form = ({ submit, family, goTo }) => {
                     values.MICS_5 = selected;
                     //validateField("MICS_5");
                   }}
-                  title="...Brincou com a crianca?"
+                  title={`...Brincou com a ${family.crianca.nome}?`}
                 />
                 <Select
+                  value={values.MICS_6}
                   touched={touched.MICS_6}
                   style={styles.box1}
                   errors={errors.MICS_6}
@@ -631,7 +648,7 @@ const Form = ({ submit, family, goTo }) => {
                     values.MICS_6 = selected;
                     //validateField("MICS_6");
                   }}
-                  title="...Cantou, contou número ou fez desenhos com criança"
+                  title={`...Cantou, contou número ou fez desenhos com ${family.crianca.nome}`}
                 />
               </View>
             )}
@@ -644,6 +661,7 @@ const Form = ({ submit, family, goTo }) => {
                 </Text>
 
                 <Select
+                  value={values.PSOC_1}
                   touched={touched.PSOC_1}
                   style={styles.box1}
                   errors={errors.PSOC_1}
@@ -661,6 +679,7 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <Select
+                  value={values.PSOC_2}
                   touched={touched.PSOC_2}
                   style={styles.box1}
                   errors={errors.PSOC_2}
@@ -677,6 +696,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Mesmo que ser mãe/pai seja gratificante, isso é difícil agora"
                 />
                 <Select
+                  value={values.PSOC_3}
                   touched={touched.PSOC_3}
                   style={styles.box1}
                   errors={errors.PSOC_3}
@@ -693,6 +713,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Eu vou dormir me sentindo como se não tivesse feito muito"
                 />
                 <Select
+                  value={values.PSOC_4}
                   touched={touched.PSOC_4}
                   style={styles.box1}
                   errors={errors.PSOC_4}
@@ -709,6 +730,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Às vezes, quando eu deveria estar no controle, eu sinto que estou sendo controlada"
                 />
                 <Select
+                  value={values.PSOC_5}
                   touched={touched.PSOC_5}
                   style={styles.box1}
                   errors={errors.PSOC_5}
@@ -725,6 +747,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Meus pais foram melhor preparados para serem bons pais que eu"
                 />
                 <Select
+                  value={values.PSOC_6}
                   touched={touched.PSOC_6}
                   style={styles.box1}
                   errors={errors.PSOC_6}
@@ -741,6 +764,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Eu gostaria de ser um bom modelo para uma nova mãe/novo pai"
                 />
                 <Select
+                  value={values.PSOC_7}
                   touched={touched.PSOC_7}
                   style={styles.box1}
                   errors={errors.PSOC_7}
@@ -757,6 +781,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Os problemas relacionados a ser mãe/pai são facilmentes resolvidos"
                 />
                 <Select
+                  value={values.PSOC_8}
                   touched={touched.PSOC_8}
                   style={styles.box1}
                   errors={errors.PSOC_8}
@@ -773,6 +798,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Um problema de ser mãe/pai é não saber se você está fazendo um bom trabalho "
                 />
                 <Select
+                  value={values.PSOC_9}
                   touched={touched.PSOC_9}
                   style={styles.box1}
                   errors={errors.PSOC_9}
@@ -789,6 +815,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Às vezes eu sinto que não estou fazendo nada"
                 />
                 <Select
+                  value={values.PSOC_10}
                   touched={touched.PSOC_10}
                   style={styles.box1}
                   errors={errors.PSOC_10}
@@ -805,6 +832,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Eu sinto que sou tão habilidoso quanto preciso para cuidar do meu filho/minha filha"
                 />
                 <Select
+                  value={values.PSOC_11}
                   touched={touched.PSOC_11}
                   style={styles.box1}
                   errors={errors.PSOC_11}
@@ -821,6 +849,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Se qualquer pessoa pode encontrar a resposta sobre o que está pertubando meu filho eu também posso"
                 />
                 <Select
+                  value={values.PSOC_12}
                   touched={touched.PSOC_12}
                   style={styles.box1}
                   errors={errors.PSOC_12}
@@ -838,6 +867,7 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <Select
+                  value={values.PSOC_13}
                   touched={touched.PSOC_13}
                   style={styles.box1}
                   errors={errors.PSOC_13}
@@ -854,6 +884,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Eu estou mais interessado em outras coisas do que em ser mãe/pai"
                 />
                 <Select
+                  value={values.PSOC_14}
                   touched={touched.PSOC_14}
                   style={styles.box1}
                   errors={errors.PSOC_14}
@@ -870,6 +901,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Considerando quanto tempo que eu sou mãe/pai, eu sei o que estou fazendo"
                 />
                 <Select
+                  value={values.PSOC_15}
                   touched={touched.PSOC_15}
                   style={styles.box1}
                   errors={errors.PSOC_15}
@@ -886,6 +918,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Eu seria uma mãe/um pai melhor se cuidar dos filhos fosse mais interessante"
                 />
                 <Select
+                  value={values.PSOC_16}
                   touched={touched.PSOC_16}
                   style={styles.box1}
                   errors={errors.PSOC_16}
@@ -902,6 +935,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Eu tenho todas as habilidades para ser uma boa mãe/bom pai"
                 />
                 <Select
+                  value={values.PSOC_17}
                   touched={touched.PSOC_17}
                   style={styles.box1}
                   errors={errors.PSOC_17}
@@ -918,6 +952,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Ser mãe/pai deixa-me tenso e nervoso"
                 />
                 <Select
+                  value={values.PSOC_18}
                   touched={touched.PSOC_18}
                   style={styles.box1}
                   errors={errors.PSOC_18}
@@ -948,6 +983,7 @@ const Form = ({ submit, family, goTo }) => {
                 </Text>
 
                 <MultipleCheckBoxSingle
+                  value={values.ACT_EP2}
                   right="Fico de mal humor e sou exigente com meu filho/filha"
                   left="Não fico de mal humor nem sou mais exigente com meu filho/filha"
                   errors={errors.ACT_EP2}
@@ -968,11 +1004,12 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <MultipleCheckBoxSingle
+                  value={values.ACT_EP4}
                   right="Faço um sermão longo"
                   left="Converso e vou direto ao assunto"
                   errors={errors.ACT_EP4}
                   touched={touched.ACT_EP4}
-                  title="Quando meu filho/filha se comporta mal..."
+                  title="Quando meu filho(a) se comporta mal..."
                   data={[
                     { id: 1, key: 1, checked: "unchecked" },
                     { id: 2, key: 2, checked: "unchecked" },
@@ -988,11 +1025,12 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <MultipleCheckBoxSingle
+                  value={values.ACT_EP5}
                   right="Levanto a voz ou grito"
                   left="Falo com meu filho/minha filha com calma"
                   errors={errors.ACT_EP5}
                   touched={touched.ACT_EP5}
-                  title="Quando meu filho/filha se comporta mal..."
+                  title="Quando meu filho(a) se comporta mal..."
                   data={[
                     { id: 1, key: 1, checked: "unchecked" },
                     { id: 2, key: 2, checked: "unchecked" },
@@ -1007,11 +1045,12 @@ const Form = ({ submit, family, goTo }) => {
                   }}
                 />
                 <MultipleCheckBoxSingle
+                  value={values.ACT_EP6}
                   right="Eu guardo rancor e ressentimento"
                   left="As coisas voltam à normalidade rapidamente"
                   errors={errors.ACT_EP6}
                   touched={touched.ACT_EP6}
-                  title="Depois que tive um problema com meu filho/filha"
+                  title="Depois que tive um problema com meu filho(a)..."
                   data={[
                     { id: 1, key: 1, checked: "unchecked" },
                     { id: 2, key: 2, checked: "unchecked" },
@@ -1026,11 +1065,12 @@ const Form = ({ submit, family, goTo }) => {
                   }}
                 />
                 <MultipleCheckBoxSingle
+                  value={values.ACT_EP7}
                   right="As coisas pioram e faço coisas que não tinha a intenção de fazer"
                   left="Não perco o controle da situação"
                   errors={errors.ACT_EP7}
                   touched={touched.ACT_EP7}
-                  title="Quando tenho um problema com meu filho/filha"
+                  title="Quando tenho um problema com meu filho(a)..."
                   data={[
                     { id: 1, key: 1, checked: "unchecked" },
                     { id: 2, key: 2, checked: "unchecked" },
@@ -1046,11 +1086,12 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <MultipleCheckBoxSingle
+                  value={values.ACT_EP8}
                   right="Nunca ou raramente"
                   left="A maioria das vezes"
                   errors={errors.ACT_EP8}
                   touched={touched.ACT_EP8}
-                  title="Quando meu filho ou filha se comporta mal dou-lhe uma surra, dou uma bofetada, agarro com força ou bato nele/nela"
+                  title="Quando meu filho ou filha se comporta mal dou-lhe uma surra, dou uma bofetada, agarro com força ou bato nele/nela..."
                   data={[
                     { id: 1, key: 1, checked: "unchecked" },
                     { id: 2, key: 2, checked: "unchecked" },
@@ -1066,11 +1107,12 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <MultipleCheckBoxSingle
+                  value={values.ACT_EP10}
                   right="Raramente xingo ou uso palavrão"
                   left="Quase sempre uso palavrões"
                   errors={errors.ACT_EP10}
                   touched={touched.ACT_EP10}
-                  title="Quando meu filho/filha se comporta mal..."
+                  title="Quando meu filho(a) se comporta mal..."
                   data={[
                     { id: 1, key: 1, checked: "unchecked" },
                     { id: 2, key: 2, checked: "unchecked" },
@@ -1086,6 +1128,7 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <MultipleCheckBoxSingle
+                  value={values.ACT_EP11}
                   right="Nunca ou raramente"
                   left="A maioria das vezes"
                   errors={errors.ACT_EP11}
@@ -1106,6 +1149,7 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <Select
+                  value={values.ACT_CP1}
                   touched={touched.ACT_CP1}
                   style={styles.box1}
                   errors={errors.ACT_CP1}
@@ -1144,6 +1188,7 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <Select
+                  value={values.ACT_CP2}
                   touched={touched.ACT_CP2}
                   style={styles.box1}
                   errors={errors.ACT_CP2}
@@ -1181,6 +1226,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Controlo minha raiva quando tenho dificuldades com meus filhos"
                 />
                 <Select
+                  value={values.ACT_CP3}
                   touched={touched.ACT_CP3}
                   style={styles.box1}
                   errors={errors.ACT_CP3}
@@ -1218,6 +1264,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Ensino a meus filhos como resolver conflitos com outras pessoas usando palavras, não violência"
                 />
                 <Select
+                  value={values.ACT_CP4}
                   touched={touched.ACT_CP4}
                   style={styles.box1}
                   errors={errors.ACT_CP4}
@@ -1255,6 +1302,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Limito a quantidade de violência que meus filhos podem ver na televisão, filmes e jogos"
                 />
                 <Select
+                  value={values.ACT_CP5}
                   touched={touched.ACT_CP5}
                   style={styles.box1}
                   errors={errors.ACT_CP5}
@@ -1293,6 +1341,7 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <Select
+                  value={values.ACT_CP6}
                   touched={touched.ACT_CP6}
                   style={styles.box1}
                   errors={errors.ACT_CP6}
@@ -1330,6 +1379,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Quando estou com raiva, eu me acalmo para que meus filhos aprendam a como fazer o mesmo"
                 />
                 <Select
+                  value={values.ACT_CP8}
                   touched={touched.ACT_CP8}
                   style={styles.box1}
                   errors={errors.ACT_CP8}
@@ -1375,6 +1425,7 @@ const Form = ({ submit, family, goTo }) => {
                   Até que ponto isto é verdade cada afirmação
                 </Text>
                 <Select
+                  value={values.PAFAS_1}
                   touched={touched.PAFAS_1}
                   style={styles.box1}
                   errors={errors.PAFAS_1}
@@ -1407,6 +1458,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Se meu/minha filho/filha não faz o que peço, eu desisto e eu mesmo faço"
                 />
                 <Select
+                  value={values.PAFAS_2}
                   touched={touched.PAFAS_2}
                   style={styles.box1}
                   errors={errors.PAFAS_2}
@@ -1439,6 +1491,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Quando meu/minha filho/filha se comporta mal, eu ameaço (por exemplo, desligar a televisão), mas eu não cumpro"
                 />
                 <Select
+                  value={values.PAFAS_3}
                   touched={touched.PAFAS_3}
                   style={styles.box1}
                   errors={errors.PAFAS_3}
@@ -1471,6 +1524,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Eu grito ou fico brava com meu/minha filho/filha quando ele/ela se comporta mal"
                 />
                 <Select
+                  value={values.PAFAS_4}
                   touched={touched.PAFAS_4}
                   style={styles.box1}
                   errors={errors.PAFAS_4}
@@ -1504,6 +1558,7 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <Select
+                  value={values.PAFAS_5}
                   touched={touched.PAFAS_5}
                   style={styles.box1}
                   errors={errors.PAFAS_5}
@@ -1536,6 +1591,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Eu tento fazer meu/minha filho/filha se sentir mal (por exemplo, culpado ou envergonhado) por se comportar mal, para lhe ensinar uma lição"
                 />
                 <Select
+                  value={values.PAFAS_6}
                   touched={touched.PAFAS_6}
                   style={styles.box1}
                   errors={errors.PAFAS_6}
@@ -1568,6 +1624,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Eu dou atenção ao meu/minha filho/filha como um abraço, uma piscada de olho, um sorriso ou um beijo, quando ele/ela se comporta bem"
                 />
                 <Select
+                  value={values.PAFAS_7}
                   touched={touched.PAFAS_7}
                   style={styles.box1}
                   errors={errors.PAFAS_7}
@@ -1600,6 +1657,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Eu dou uma palmada no meu filho/filha quando ele/ela se comporta mal"
                 />
                 <Select
+                  value={values.PAFAS_8}
                   touched={touched.PAFAS_8}
                   style={styles.box1}
                   errors={errors.PAFAS_8}
@@ -1632,6 +1690,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Eu dou ao meu/minha filho/filha o que ele/ela quer quando ele/ela fica com raiva ou chateado(a)"
                 />
                 <Select
+                  value={values.PAFAS_9}
                   touched={touched.PAFAS_9}
                   style={styles.box1}
                   errors={errors.PAFAS_9}
@@ -1665,6 +1724,7 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <Select
+                  value={values.PAFAS_11}
                   touched={touched.PAFAS_11}
                   style={styles.box1}
                   errors={errors.PAFAS_11}
@@ -1708,6 +1768,7 @@ const Form = ({ submit, family, goTo }) => {
                 </Text>
 
                 <Select
+                  value={values.SDQ_1}
                   touched={touched.SDQ_1}
                   style={styles.box1}
                   errors={errors.SDQ_1}
@@ -1735,6 +1796,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Tem consideração pelos sentimentos de outras pessoas"
                 />
                 <Select
+                  value={values.SDQ_2}
                   touched={touched.SDQ_2}
                   style={styles.box1}
                   errors={errors.SDQ_2}
@@ -1762,6 +1824,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Não consegue parar sentado quando tem que fazer lição ou comer; mexe-se muito, esbarrando em coisas, derrubando coisas"
                 />
                 <Select
+                  value={values.SDQ_3}
                   touched={touched.SDQ_3}
                   style={styles.box1}
                   errors={errors.SDQ_3}
@@ -1789,6 +1852,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Muitas vezes se queixa de dor de cabeça, dor de barriga ou enjôo"
                 />
                 <Select
+                  value={values.SDQ_4}
                   touched={touched.SDQ_4}
                   style={styles.box1}
                   errors={errors.SDQ_4}
@@ -1816,6 +1880,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Tem boa vontade para compartilhar doces, brinquedos, lápis ... com outras crianças"
                 />
                 <Select
+                  value={values.SDQ_5}
                   touched={touched.SDQ_5}
                   style={styles.box1}
                   errors={errors.SDQ_5}
@@ -1843,6 +1908,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Frequentemente tem acessos de raiva ou crises de birra"
                 />
                 <Select
+                  value={values.SDQ_6}
                   touched={touched.SDQ_6}
                   style={styles.box1}
                   errors={errors.SDQ_6}
@@ -1870,6 +1936,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="É solitário, prefere brincar sozinho"
                 />
                 <Select
+                  value={values.SDQ_7}
                   touched={touched.SDQ_7}
                   style={styles.box1}
                   errors={errors.SDQ_7}
@@ -1897,6 +1964,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Geralmente é obediente e faz normalmente o que os adultos lhe pedem"
                 />
                 <Select
+                  value={values.SDQ_8}
                   touched={touched.SDQ_8}
                   style={styles.box1}
                   errors={errors.SDQ_8}
@@ -1924,6 +1992,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Tem muitas preocupações, muitas vezes parece preocupado com tudo"
                 />
                 <Select
+                  value={values.SDQ_9}
                   touched={touched.SDQ_9}
                   style={styles.box1}
                   errors={errors.SDQ_9}
@@ -1951,6 +2020,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Tenta ser atencioso se alguém parece magoado, aflito ou se sentindo mal"
                 />
                 <Select
+                  value={values.SDQ_10}
                   touched={touched.SDQ_10}
                   style={styles.box1}
                   errors={errors.SDQ_10}
@@ -1978,6 +2048,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Está sempre agitado, balançando as pernas ou mexendo as mãos"
                 />
                 <Select
+                  value={values.SDQ_11}
                   touched={touched.SDQ_11}
                   style={styles.box1}
                   errors={errors.SDQ_11}
@@ -2005,6 +2076,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Tem pelo menos um bom amigo ou amiga"
                 />
                 <Select
+                  value={values.SDQ_12}
                   touched={touched.SDQ_12}
                   style={styles.box1}
                   errors={errors.SDQ_12}
@@ -2032,6 +2104,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Frequentemente briga com outras crianças ou as amedronta"
                 />
                 <Select
+                  value={values.SDQ_13}
                   touched={touched.SDQ_13}
                   style={styles.box1}
                   errors={errors.SDQ_13}
@@ -2059,6 +2132,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Frequentemente parece triste, desanimado ou choroso"
                 />
                 <Select
+                  value={values.SDQ_14}
                   touched={touched.SDQ_14}
                   style={styles.box1}
                   errors={errors.SDQ_14}
@@ -2086,6 +2160,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Em geral, é querido por outras crianças"
                 />
                 <Select
+                  value={values.SDQ_15}
                   touched={touched.SDQ_15}
                   style={styles.box1}
                   errors={errors.SDQ_15}
@@ -2113,6 +2188,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Facilmente perde a concentração"
                 />
                 <Select
+                  value={values.SDQ_16}
                   touched={touched.SDQ_16}
                   style={styles.box1}
                   errors={errors.SDQ_16}
@@ -2140,6 +2216,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Fica inseguro quando tem que fazer alguma coisa pela primeira vez, facilmete perde a confiança em si mesmo"
                 />
                 <Select
+                  value={values.SDQ_17}
                   touched={touched.SDQ_17}
                   style={styles.box1}
                   errors={errors.SDQ_17}
@@ -2169,6 +2246,7 @@ const Form = ({ submit, family, goTo }) => {
 
                 {family.crianca.idade <= 3 && family.crianca.idade >= 2 ? (
                   <Select
+                    value={values["SDQ_18(2-3)"]}
                     touched={touched["SDQ_18(2-3)"]}
                     style={styles.box1}
                     errors={errors["SDQ_18(2-3)"]}
@@ -2197,6 +2275,7 @@ const Form = ({ submit, family, goTo }) => {
                   />
                 ) : family.crianca.idade >= 4 && family.crianca.idade <= 8 ? (
                   <Select
+                    value={values["SDQ_18(4-8)"]}
                     touched={touched["SDQ_18(4-8)"]}
                     style={styles.box1}
                     errors={errors["SDQ_18(4-8)"]}
@@ -2226,6 +2305,7 @@ const Form = ({ submit, family, goTo }) => {
                 ) : null}
 
                 <Select
+                  value={values.SDQ_19}
                   touched={touched.SDQ_19}
                   style={styles.box1}
                   errors={errors.SDQ_19}
@@ -2254,6 +2334,7 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <Select
+                  value={values.SDQ_20}
                   touched={touched.SDQ_20}
                   style={styles.box1}
                   errors={errors.SDQ_20}
@@ -2278,11 +2359,12 @@ const Form = ({ submit, family, goTo }) => {
                     values.SDQ_20 = selected;
                     //validateField("SDQ_20");
                   }}
-                  title="Frequentemente se oferece para ajudar outras pessoas (pais,professores,outras crianças)"
+                  title="Frequentemente se oferece para ajudar outras pessoas (pais, professores, outras crianças)"
                 />
 
                 {family.crianca.idade >= 2 && family.crianca.idade <= 3 ? (
                   <Select
+                    value={values["SDQ_21(2-3)"]}
                     touched={touched["SDQ_21(2-3)"]}
                     style={styles.box1}
                     errors={errors["SDQ_21(2-3)"]}
@@ -2307,10 +2389,11 @@ const Form = ({ submit, family, goTo }) => {
                       values["SDQ_21(2-3)"] = selected;
                       //validateField("SDQ_21(2-3)");
                     }}
-                    title="Consegue parar e pensar nas coisas antes de fazê las"
+                    title="Consegue parar e pensar nas coisas antes de fazê-las"
                   />
                 ) : family.crianca.idade >= 4 && family.crianca.idade <= 8 ? (
                   <Select
+                    value={values["SDQ_21(4-8)"]}
                     touched={touched["SDQ_21(4-8)"]}
                     style={styles.box1}
                     errors={errors["SDQ_21(4-8)"]}
@@ -2340,6 +2423,7 @@ const Form = ({ submit, family, goTo }) => {
                 ) : null}
                 {family.crianca.idade >= 2 && family.crianca.idade <= 3 ? (
                   <Select
+                    value={values["SDQ_22(2-3)"]}
                     touched={touched["SDQ_22(2-3)"]}
                     style={styles.box1}
                     errors={errors["SDQ_22(2-3)"]}
@@ -2364,10 +2448,11 @@ const Form = ({ submit, family, goTo }) => {
                       values["SDQ_22(2-3)"] = selected;
                       //validateField("SDQ_22(2-3)");
                     }}
-                    title="Ás vezes é malicioso"
+                    title="Às vezes é malicioso"
                   />
                 ) : family.crianca.idade >= 4 && family.crianca.idade <= 8 ? (
                   <Select
+                    value={values["SDQ_22(4-8)"]}
                     touched={touched["SDQ_22(4-8)"]}
                     style={styles.box1}
                     errors={errors["SDQ_22(4-8)"]}
@@ -2397,6 +2482,7 @@ const Form = ({ submit, family, goTo }) => {
                 ) : null}
 
                 <Select
+                  value={values.SDQ_23}
                   touched={touched.SDQ_23}
                   style={styles.box1}
                   errors={errors.SDQ_23}
@@ -2424,6 +2510,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Se dá melhor com adultos do que com outras crianças"
                 />
                 <Select
+                  value={values.SDQ_24}
                   touched={touched.SDQ_24}
                   style={styles.box1}
                   errors={errors.SDQ_24}
@@ -2451,6 +2538,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Tem muitos medos, assusta-se facilmente"
                 />
                 <Select
+                  value={values.SDQ_25}
                   touched={touched.SDQ_25}
                   style={styles.box1}
                   errors={errors.SDQ_25}
@@ -2494,6 +2582,7 @@ const Form = ({ submit, family, goTo }) => {
 
                 <Text style={styles.text}>Daqui a dez anos</Text>
                 <Select
+                  value={values.EPVA_3}
                   touched={touched.EPVA_3}
                   style={styles.box1}
                   errors={errors.EPVA_3}
@@ -2532,6 +2621,7 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <Select
+                  value={values.EPVA_4}
                   touched={touched.EPVA_4}
                   style={styles.box1}
                   errors={errors.EPVA_4}
@@ -2570,43 +2660,7 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <Select
-                  touched={touched.EPVA_5}
-                  style={styles.box1}
-                  errors={errors.EPVA_5}
-                  data={[
-                    {
-                      key: "Discordo totalmente",
-                      id: 0,
-                      checked: false,
-                    },
-                    {
-                      key: "Discordo parcialmente",
-                      id: 1,
-                      checked: false,
-                    },
-                    {
-                      key: "Não sei avaliar",
-                      id: 2,
-                      checked: false,
-                    },
-                    {
-                      key: "Concordo parcialmente",
-                      id: 3,
-                      checked: false,
-                    },
-                    {
-                      key: "Concordo",
-                      id: 4,
-                      checked: false,
-                    },
-                  ]}
-                  onSelectionChange={(selected) => {
-                    values.EPVA_5 = selected;
-                    //validateField("EPVA_5");
-                  }}
-                  title="Pretendo ter condições de fazer viagens nacionais e internacionais"
-                />
-                <Select
+                  value={values.EPVA_8}
                   touched={touched.EPVA_8}
                   style={styles.box1}
                   errors={errors.EPVA_8}
@@ -2645,6 +2699,7 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <Select
+                  value={values.EPVA_10}
                   touched={touched.EPVA_10}
                   style={styles.box1}
                   errors={errors.EPVA_10}
@@ -2682,6 +2737,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Gostaria de ter sucesso em meus estudos"
                 />
                 <Select
+                  value={values.EPVA_12}
                   touched={touched.EPVA_12}
                   style={styles.box1}
                   errors={errors.EPVA_12}
@@ -2720,6 +2776,7 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <Select
+                  value={values.EPVA_14}
                   touched={touched.EPVA_14}
                   style={styles.box1}
                   errors={errors.EPVA_14}
@@ -2757,6 +2814,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Gostaria de estar me relacionando com pessoas com a mesma fé que eu"
                 />
                 <Select
+                  value={values.EPVA_15}
                   touched={touched.EPVA_15}
                   style={styles.box1}
                   errors={errors.EPVA_15}
@@ -2794,6 +2852,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Pretendo recorrer a Deus para resolver as minhas dificuldades"
                 />
                 <Select
+                  value={values.EPVA_16}
                   touched={touched.EPVA_16}
                   style={styles.box1}
                   errors={errors.EPVA_16}
@@ -2832,6 +2891,7 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <Select
+                  value={values.EPVA_18}
                   touched={touched.EPVA_18}
                   style={styles.box1}
                   errors={errors.EPVA_18}
@@ -2869,6 +2929,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Gostaria de estudar algo no qual possa desempenhar minhas capacidades"
                 />
                 <Select
+                  value={values.EPVA_20}
                   touched={touched.EPVA_20}
                   style={styles.box1}
                   errors={errors.EPVA_20}
@@ -2906,6 +2967,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Pretendo ser uma pessoa mais generosa"
                 />
                 <Select
+                  value={values.EPVA_21}
                   touched={touched.EPVA_21}
                   style={styles.box1}
                   errors={errors.EPVA_21}
@@ -2943,6 +3005,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Pretendo ser uma pessoa mais feliz do que sou hoje"
                 />
                 <Select
+                  value={values.EPVA_23}
                   touched={touched.EPVA_23}
                   style={styles.box1}
                   errors={errors.EPVA_23}
@@ -2980,6 +3043,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Gostaria de estar formado no curso técnico ou na faculdade"
                 />
                 <Select
+                  value={values.EPVA_24}
                   touched={touched.EPVA_24}
                   style={styles.box1}
                   errors={errors.EPVA_24}
@@ -3017,6 +3081,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Gostaria de conseguir um bom trabalho graças aos meus estudos"
                 />
                 <Select
+                  value={values.EPVA_26}
                   touched={touched.EPVA_26}
                   style={styles.box1}
                   errors={errors.EPVA_26}
@@ -3054,6 +3119,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Gostaria de melhorar de vida em função do meu estudo"
                 />
                 <Select
+                  value={values.EPVA_28}
                   touched={touched.EPVA_28}
                   style={styles.box1}
                   errors={errors.EPVA_28}
@@ -3091,6 +3157,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Não pretendo estar fazendo curso técnico nem faculdade"
                 />
                 <Select
+                  value={values.EPVA_31}
                   touched={touched.EPVA_31}
                   style={styles.box1}
                   errors={errors.EPVA_31}
@@ -3128,6 +3195,8 @@ const Form = ({ submit, family, goTo }) => {
                   title="Gostaria de estar me tornando uma pessoa melhor por meio da minha fé"
                 />
                 <Select
+                  value={values.EPVA_32}
+                  value={values.EPVA_32}
                   touched={touched.EPVA_32}
                   style={styles.box1}
                   errors={errors.EPVA_32}
@@ -3166,6 +3235,7 @@ const Form = ({ submit, family, goTo }) => {
                 />
 
                 <Select
+                  value={values.EPVA_34}
                   touched={touched.EPVA_34}
                   style={styles.box1}
                   errors={errors.EPVA_34}
@@ -3203,6 +3273,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Gostaria de estar cursando/ter concluído uma faculdade"
                 />
                 <Select
+                  value={values.EPVA_36}
                   touched={touched.EPVA_36}
                   style={styles.box1}
                   errors={errors.EPVA_36}
@@ -3240,6 +3311,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Gostaria de estar fazendo o bem para as pessoas"
                 />
                 <Select
+                  value={values.EPVA_38}
                   touched={touched.EPVA_38}
                   style={styles.box1}
                   errors={errors.EPVA_38}
@@ -3277,6 +3349,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Gostaria estar trabalhando para poder manter meus estudos"
                 />
                 <Select
+                  value={values.EPVA_40}
                   touched={touched.EPVA_40}
                   style={styles.box1}
                   errors={errors.EPVA_40}
@@ -3314,6 +3387,7 @@ const Form = ({ submit, family, goTo }) => {
                   title="Gostaria que Deus me ajudasse a conseguir tudo o que planejo"
                 />
                 <Select
+                  value={values.EPVA_42}
                   touched={touched.EPVA_42}
                   style={styles.box1}
                   errors={errors.EPVA_42}
@@ -3356,6 +3430,7 @@ const Form = ({ submit, family, goTo }) => {
             {family.formulariosPreenchidos === 1 && page === 9 ? (
               <View style={styles.box}>
                 <Select
+                  value={values.VI_1}
                   touched={touched.VI_1}
                   style={styles.box1}
                   errors={errors.VI_1}
@@ -3390,6 +3465,7 @@ const Form = ({ submit, family, goTo }) => {
                 {state2 === true ? (
                   <>
                     <MultipleCheckBox
+                      value={values.VI_2}
                       errors={errors.VI_2}
                       touched={touched.VI_2}
                       title="Em qual fase da sua vida?"
@@ -3402,12 +3478,12 @@ const Form = ({ submit, family, goTo }) => {
                       value={values.VI_2}
                       onSelectionChange={(selected) => {
                         values.VI_2 = selected;
-                        console.log(selected);
 
                         //validateField("VI_2");
                       }}
                     />
                     <MultipleCheckBox
+                      value={values.VI_3}
                       errors={errors.VI_3}
                       touched={touched.VI_3}
                       title="Qual foi o tipo de violência?"
@@ -3415,14 +3491,14 @@ const Form = ({ submit, family, goTo }) => {
                         { id: 0, key: "Abuso fisico", checked: "unchecked" },
                         {
                           id: 1,
-                          key: "Abuso psicológico(ex:humilhou)",
+                          key: "Abuso psicológico (ex:humilhou)",
                           checked: "unchecked",
                         },
                         { id: 2, key: "Abuso sexual", checked: "unchecked" },
                         {
                           id: 3,
                           key:
-                            "Negligência(ex: falta de alimentação e cuidados)",
+                            "Negligência (ex: falta de alimentação e cuidados)",
                           checked: "unchecked",
                         },
                       ]}
@@ -3434,6 +3510,7 @@ const Form = ({ submit, family, goTo }) => {
                       }}
                     />
                     <MultipleCheckBox
+                      value={values.VI_4}
                       errors={errors.VI_4}
                       touched={touched.VI_4}
                       title="Quem cometeu a violência"
@@ -3449,7 +3526,7 @@ const Form = ({ submit, family, goTo }) => {
                       value={values.VI_4}
                       onSelectionChange={(selected) => {
                         values.VI_4 = selected;
-                        console.log(selected);
+
                         //validateField("VI_4");
                       }}
                     />
@@ -3460,6 +3537,68 @@ const Form = ({ submit, family, goTo }) => {
 
             {page === 10 ? (
               <>
+                {(family.formulariosPreenchidos === 1 ||
+                  family.formulariosPreenchidos === 2) && (
+                  <Select
+                    value={values.ACT}
+                    touched={touched.ACT}
+                    style={styles.box}
+                    errors={errors.ACT}
+                    data={[
+                      {
+                        key: "1",
+                        id: 0,
+                        checked: false,
+                      },
+                      {
+                        key: "2",
+                        id: 1,
+                        checked: false,
+                      },
+                      {
+                        key: "3",
+                        id: 2,
+                        checked: false,
+                      },
+                      {
+                        key: "4",
+                        id: 3,
+                        checked: false,
+                      },
+                      {
+                        key: "5",
+                        id: 4,
+                        checked: false,
+                      },
+                      {
+                        key: "6",
+                        id: 5,
+                        checked: false,
+                      },
+                      {
+                        key: "7",
+                        id: 6,
+                        checked: false,
+                      },
+                      {
+                        key: "8",
+                        id: 7,
+                        checked: false,
+                      },
+                    ]}
+                    onSelectionChange={(selected) => {
+                      values.ACT = selected;
+                      //validateField("VI_1");
+                      if (selected === "Sim") {
+                        setState2(true);
+                      } else {
+                        setState2(false);
+                      }
+                    }}
+                    title="Quantos encontros do programa ACT o cuidador participou?"
+                  />
+                )}
+
                 {Object.keys(errors).length > 0 ? (
                   <Text
                     style={{
@@ -3475,7 +3614,15 @@ const Form = ({ submit, family, goTo }) => {
                 <TouchableOpacity
                   style={styles.button}
                   onPress={() => {
-                    setPage((prev) => prev - 1);
+                    let it;
+
+                    array.forEach((item, index) => {
+                      if (item === page) {
+                        it = array[index - 1];
+                      }
+                    });
+
+                    setPage(it);
                   }}
                 >
                   <Text style={styles.textbutton}>Voltar página</Text>
@@ -3485,7 +3632,6 @@ const Form = ({ submit, family, goTo }) => {
                   onPress={() => {
                     values.familia = family;
                     handleSubmit();
-                    console.log(errors);
                   }}
                 >
                   <Text style={styles.textbutton}>Finalizar</Text>
@@ -3504,7 +3650,7 @@ const Form = ({ submit, family, goTo }) => {
                           it = array[index - 1];
                         }
                       });
-
+                      console.log(array, it);
                       setPage(it);
                     }}
                   >
@@ -3522,7 +3668,7 @@ const Form = ({ submit, family, goTo }) => {
                           it = array[index + 1];
                         }
                       });
-
+                      console.log(array, it);
                       setPage(it);
                     }}
                   >

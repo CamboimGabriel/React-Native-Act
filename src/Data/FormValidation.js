@@ -251,15 +251,6 @@ const FormSchema = Yup.object().shape({
     }
   ),
 
-  EPVA_5: Yup.string().when(
-    ["familia.cuidador.idade", "familia.formulariosPreenchidos"],
-    {
-      is: (value, value2) => value < 18 && value2 === 0,
-
-      then: Yup.string().required("Campo obrigatorio"),
-    }
-  ),
-
   EPVA_8: Yup.string().when(
     ["familia.cuidador.idade", "familia.formulariosPreenchidos"],
     {
@@ -459,6 +450,10 @@ const FormSchema = Yup.object().shape({
     is: "Sim",
     then: Yup.array().min(1, "Campo obrigatorio"),
     otherwise: Yup.array(),
+  }),
+  ACT: Yup.string().when("familia.formulariosPreenchidos", {
+    is: (value) => value === 1 || value === 2,
+    then: Yup.string().required("Campo obrigatorio"),
   }),
 });
 

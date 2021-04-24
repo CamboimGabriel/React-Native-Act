@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -31,6 +31,15 @@ const MultipleCheckBoxSingle = ({
     setState({ checkboxes: values });
     onSelectionChange(id);
   };
+
+  useEffect(() => {
+    if (value) {
+      const checkboxes = state.checkboxes.map((item) =>
+        item.id === value ? { ...item, checked: "checked" } : item
+      );
+      setState({ checkboxes });
+    }
+  }, []);
 
   return (
     <View style={style}>

@@ -16,10 +16,12 @@ const RegisterForm = ({ submit }) => {
         validationSchema={RegSchema}
         initialValues={{
           criancaNome: "",
+
           criancaNascimento: "",
           criancaIdade: "",
           criancaMeses: "",
           cuidadorNome: "",
+
           criancaSexo: "",
           cuidadorNascimento: "",
           cuidadorIdade: "",
@@ -463,10 +465,10 @@ const RegisterForm = ({ submit }) => {
               style={styles.box}
               errors={errors.cuidadorSituacaoConjugal}
               data={[
-                { key: "Casada/União estável", id: 0, checked: false },
-                { key: "Solteira", id: 1, checked: false },
-                { key: "Separada", id: 2, checked: false },
-                { key: "Viúva", id: 3, checked: false },
+                { key: "Casado (a)/União estável", id: 0, checked: false },
+                { key: "Solteiro (a)", id: 1, checked: false },
+                { key: "Separado (a)", id: 2, checked: false },
+                { key: "Viúvo (a)", id: 3, checked: false },
               ]}
               onSelectionChange={(selected) => {
                 values.cuidadorSituacaoConjugal = selected;

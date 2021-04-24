@@ -1,7 +1,9 @@
 import * as Yup from "yup";
 
 const RegSchema = Yup.object().shape({
-  criancaNome: Yup.string().required("Necessário nome da criança"),
+  criancaNome: Yup.string()
+    .matches(" ", "Necessário sobrenome da criança")
+    .required("Necessário nome da criança"),
   criancaIdade: Yup.string().required("Necessário idade da criança"),
   criancaNascimento: Yup.string().required("Necessário nascimento da criança"),
   cuidadorNome: Yup.string().required("Necessário nome do cuidador(a)"),

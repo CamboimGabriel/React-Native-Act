@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 const Select = ({
+  value,
   style,
   errors,
   touched,
@@ -32,6 +34,15 @@ const Select = ({
 
     onSelectionChange(selecteds.key);
   };
+
+  useEffect(() => {
+    if (value) {
+      const checkboxes = state.checkboxes.map((item) =>
+        item.key === value ? { ...item, checked: true } : item
+      );
+      setState({ checkboxes });
+    }
+  }, []);
 
   return (
     <View style={style}>
