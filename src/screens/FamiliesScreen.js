@@ -68,7 +68,7 @@ const FamiliesScreen = ({ navigation }) => {
               return state.semGrupo.length - contador >= 6 &&
                 selectedValue === "Sem Grupo" ? (
                 <>
-                  <Text style={{ fontSize: 16, marginTop: 15, color: "green" }}>
+                  <Text style={{ fontSize: 16, marginTop: 15, color: "red" }}>
                     Foram cadastradas seis famílias e a partir de agora você
                     pode criar um grupo com essas famílias.
                   </Text>

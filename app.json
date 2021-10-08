@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Act",
-    "slug": "Act",
+    "name": "inDIca",
+    "slug": "inDIca",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,13 +24,14 @@
     },
     "android": {
       "package": "com.uf.Act",
-      "versionCode": 1,
-      "userInterfaceStyle": "light"
-      
+      "versionCode": 3,
+      "userInterfaceStyle": "light",
+      "permissions": []
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "description": ""
+    
   }
 }
