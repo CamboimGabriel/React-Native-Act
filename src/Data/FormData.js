@@ -25,7 +25,7 @@ const Form = ({ submit, family, goTo }) => {
   array.push(6);
 
   if (family.crianca.idade >= 2) array.push(7);
-  if (family.formulariosPreenchidos === 0 && family.cuidador.idade < 18)
+  if (family.cuidador.idade < 18)
     array.push(8);
   if (family.formulariosPreenchidos === 1) array.push(9);
   array.push(10);
@@ -617,7 +617,7 @@ const Form = ({ submit, family, goTo }) => {
                     values.MICS_4 = selected;
                     //validateField("MICS_4");
                   }}
-                  title={`...Levou o(a) ${family.crianca.nome} para fora de casa,no quintal,jardim ou cercado?`}
+                  title={`...Levou o(a) ${family.crianca.nome} para fora de casa, no quintal,jardim ou cercado?`}
                 />
 
                 <Select
@@ -744,7 +744,7 @@ const Form = ({ submit, family, goTo }) => {
                     values.PSOC_5 = selected;
                     //validateField("PSOC_5");
                   }}
-                  title="Meus pais foram melhor preparados para serem bons pais que eu"
+                  title="Meus pais foram melhor preparados para serem bons pais do que eu"
                 />
                 <Select
                   value={values.PSOC_6}
@@ -778,7 +778,7 @@ const Form = ({ submit, family, goTo }) => {
                     values.PSOC_7 = selected;
                     //validateField("PSOC_7");
                   }}
-                  title="Os problemas relacionados a ser mãe/pai são facilmentes resolvidos"
+                  title="Os problemas relacionados a ser mãe/pai são facilmente resolvidos"
                 />
                 <Select
                   value={values.PSOC_8}
@@ -1436,7 +1436,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Um pouco(Algum tempo)",
+                      key: "Um pouco (Algum tempo)",
                       id: 1,
                       checked: false,
                     },
@@ -1469,7 +1469,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Um pouco(Algum tempo)",
+                      key: "Um pouco (Algum tempo)",
                       id: 1,
                       checked: false,
                     },
@@ -1502,7 +1502,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Um pouco(Algum tempo)",
+                      key: "Um pouco (Algum tempo)",
                       id: 1,
                       checked: false,
                     },
@@ -1535,7 +1535,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Um pouco(Algum tempo)",
+                      key: "Um pouco (Algum tempo)",
                       id: 1,
                       checked: false,
                     },
@@ -1569,7 +1569,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Um pouco(Algum tempo)",
+                      key: "Um pouco (Algum tempo)",
                       id: 1,
                       checked: false,
                     },
@@ -1602,7 +1602,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Um pouco(Algum tempo)",
+                      key: "Um pouco (Algum tempo)",
                       id: 1,
                       checked: false,
                     },
@@ -1635,7 +1635,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Um pouco(Algum tempo)",
+                      key: "Um pouco (Algum tempo)",
                       id: 1,
                       checked: false,
                     },
@@ -1668,7 +1668,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Um pouco(Algum tempo)",
+                      key: "Um pouco (Algum tempo)",
                       id: 1,
                       checked: false,
                     },
@@ -1701,7 +1701,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Um pouco(Algum tempo)",
+                      key: "Um pouco (Algum tempo)",
                       id: 1,
                       checked: false,
                     },
@@ -1735,7 +1735,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Um pouco(Algum tempo)",
+                      key: "Um pouco (Algum tempo)",
                       id: 1,
                       checked: false,
                     },
@@ -2213,7 +2213,7 @@ const Form = ({ submit, family, goTo }) => {
                     values.SDQ_16 = selected;
                     //validateField("SDQ_16");
                   }}
-                  title="Fica inseguro quando tem que fazer alguma coisa pela primeira vez, facilmete perde a confiança em si mesmo"
+                  title="Fica inseguro quando tem que fazer alguma coisa pela primeira vez, facilmente perde a confiança em si mesmo"
                 />
                 <Select
                   value={values.SDQ_17}
@@ -2568,12 +2568,11 @@ const Form = ({ submit, family, goTo }) => {
               </View>
             ) : null}
 
-            {family.formulariosPreenchidos === 0 &&
-            family.cuidador.idade < 18 &&
+            {family.cuidador.idade < 18 &&
             page === 8 ? (
               <View style={styles.box}>
                 <Text style={styles.text}>
-                  Você está sendo convidado a pensar sobre o seu futuro. Para
+                  Você está sendo convidada a pensar sobre o seu futuro. Para
                   isso, pense na pessoa que você é hoje e imagine como você
                   gostaria de estar no futuro. Para responder as afirmações
                   abaixo, pense no que você quer que esteja acontecendo em sua
@@ -2608,7 +2607,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -2647,7 +2646,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -2686,7 +2685,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -2725,7 +2724,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -2763,7 +2762,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -2802,7 +2801,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -2840,7 +2839,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -2878,7 +2877,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -2917,7 +2916,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -2955,7 +2954,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -2993,7 +2992,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -3031,7 +3030,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -3069,7 +3068,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -3107,7 +3106,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -3145,7 +3144,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -3183,7 +3182,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -3222,7 +3221,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -3261,7 +3260,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -3299,7 +3298,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -3337,7 +3336,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -3346,7 +3345,7 @@ const Form = ({ submit, family, goTo }) => {
                     values.EPVA_38 = selected;
                     //validateField("EPVA_38");
                   }}
-                  title="Gostaria estar trabalhando para poder manter meus estudos"
+                  title="Gostaria de estar trabalhando para poder manter meus estudos"
                 />
                 <Select
                   value={values.EPVA_40}
@@ -3375,7 +3374,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -3413,7 +3412,7 @@ const Form = ({ submit, family, goTo }) => {
                       checked: false,
                     },
                     {
-                      key: "Concordo",
+                      key: "Concordo totalmente",
                       id: 4,
                       checked: false,
                     },
@@ -3447,7 +3446,7 @@ const Form = ({ submit, family, goTo }) => {
                     },
                     {
                       key: "Prefiro não responder",
-                      id: 1,
+                      id: 2,
                       checked: false,
                     },
                   ]}
@@ -3460,7 +3459,7 @@ const Form = ({ submit, family, goTo }) => {
                       setState2(false);
                     }
                   }}
-                  title="Você vivenciou algum tipo de violência na sua vida"
+                  title="Você vivenciou algum tipo de violência na sua vida?"
                 />
                 {state2 === true ? (
                   <>

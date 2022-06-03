@@ -208,9 +208,10 @@ const RegisterForm = ({ submit }) => {
                 data={[
                   { key: "Branca", id: 0, checked: false },
                   { key: "Preta", id: 1, checked: false },
-                  { key: "Amarela", id: 2, checked: false },
-                  { key: "Indígena", id: 3, checked: false },
-                  { key: "Prefiro não declarar", id: 4, checked: false },
+                  { key: "Parda", id: 2, checked: false },
+                  { key: "Amarela", id: 3, checked: false },
+                  { key: "Indígena", id: 4, checked: false },
+                  { key: "Prefiro não declarar", id: 5, checked: false },
                 ]}
                 onSelectionChange={(selected) => {
                   values.criancaPele = selected;
@@ -298,7 +299,7 @@ const RegisterForm = ({ submit }) => {
               data={[
                 { key: "Mãe biológica", id: 0, checked: false },
                 { key: "Mãe adotiva", id: 1, checked: false },
-                { key: "Madrastra", id: 2, checked: false },
+                { key: "Madrasta", id: 2, checked: false },
                 { key: "Pai biológico", id: 3, checked: false },
                 { key: "Pai adotivo", id: 4, checked: false },
                 { key: "Padrasto", id: 5, checked: false },
@@ -434,9 +435,10 @@ const RegisterForm = ({ submit }) => {
               data={[
                 { key: "Branca", id: 0, checked: false },
                 { key: "Preta", id: 1, checked: false },
-                { key: "Amarela", id: 2, checked: false },
-                { key: "Indígena", id: 3, checked: false },
-                { key: "Prefiro não declarar", id: 4, checked: false },
+                { key: "Parda", id: 2, checked: false },
+                { key: "Amarela", id: 3, checked: false },
+                { key: "Indígena", id: 4, checked: false },
+                { key: "Prefiro não declarar", id: 5, checked: false },
               ]}
               onSelectionChange={(selected) => {
                 values.cuidadorPele = selected;
@@ -574,7 +576,7 @@ const RegisterForm = ({ submit }) => {
                 { key: "Menos de R$1000", id: 0, checked: false },
                 { key: "Entre R$1.100 - R$3000", id: 1, checked: false },
                 { key: "Entre R$ 3100 - R$5000", id: 2, checked: false },
-                { key: "Mais de R$5000", id: 3 },
+                { key: "Mais de R$5000", id: 3, checked: false },
               ]}
               onSelectionChange={(selected) => {
                 values.cuidadorRendaMensal = selected;

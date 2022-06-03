@@ -118,8 +118,8 @@ const FamilyScreen = ({ route, navigation }) => {
       resposta: family.cuidador.numeroFilhos,
     },
     {
-      pergunta: "Quantos filhos de 0 a 6anos",
-      resposta: family.cuidador.filhos0a6anos,
+      pergunta: "Quantos filhos de 0 a 6 anos",
+      resposta: family.cuidador.filhos0a6Anos,
     },
     {
       pergunta: "Quantas pessoas moram na casa",

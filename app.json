@@ -21,10 +21,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.uf.Act"
+      ,"buildNumber":"1.0.0"
     },
     "android": {
       "package": "com.uf.Act",
-      "versionCode": 3,
+      "versionCode": 4,
       "userInterfaceStyle": "light",
       "permissions": []
     },

@@ -26,11 +26,9 @@ const MultipleCheckBox = ({
       values[index].checked === "checked" ? "unchecked" : "checked";
 
     setState({ checkboxes: values });
-  };
 
-  const getSelectedValues = () => {
-    const keys = state.checkboxes.map((item) => item.key);
-    const checks = state.checkboxes.map((item) => item.checked);
+    const keys = values.map((item) => item.key);
+    const checks = values.map((item) => item.checked);
     let selecteds = [];
 
     for (let i = 0; i < checks.length; i++) {
@@ -84,7 +82,6 @@ const MultipleCheckBox = ({
               status={item.checked}
               onPress={() => {
                 onchecked(item.id);
-                getSelectedValues();
               }}
             />
             <Text>{item.key}</Text>
